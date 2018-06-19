@@ -78,7 +78,7 @@ namespace Музыкальный_плеер
             }
         }
 
-        public double Length
+        public double LengthOfCurrentSong
         {
             get
             {
@@ -93,19 +93,16 @@ namespace Музыкальный_плеер
             f.Length = current.currentMedia.duration;
             playlist.Add(f);
             current.controls.stop();
-            wmp = current;
-            wmp.settings.volume = 0;
-            wmp.controls.play();
-            //Play2(playlist.Count-1);
-            // wmp.settings.volume = vol;
-            //f.Length = current.currentMedia.duration;            
+            if (numberOfCurrentSong == -1)
+            {
+                wmp = current;
+                wmp.settings.volume = 0;
+                wmp.controls.play();
+            }
         }
 
         public void DeleteSong(int ind)
         {
-            //WindowsMediaPlayer current = new WindowsMediaPlayer();
-            //current.URL = f.Path;
-            //f.Length = current.currentMedia.duration;
             playlist.RemoveAt(ind);
         }
 
@@ -131,14 +128,6 @@ namespace Музыкальный_плеер
             playlist.ElementAt(numberOfCurrentSong).Length = wmp.currentMedia.duration;
 
             return true;
-        }
-
-        public void Play2(int ind)
-        {
-            //wmp2.URL = (playlist.ElementAt(ind)).Path;
-            //wmp2.settings.volume = 0;
-            //wmp2.controls.play();
-            //playlist.ElementAt(ind).Length = wmp2.currentMedia.duration;
         }
 
         public void Stop()

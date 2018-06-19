@@ -59,10 +59,6 @@
             this.labelCurrentSongName = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.FileLB = new Microsoft.VisualBasic.Compatibility.VB6.FileListBox();
-            this.DriveLB = new Microsoft.VisualBasic.Compatibility.VB6.DriveListBox();
-            this.DirLB = new Microsoft.VisualBasic.Compatibility.VB6.DirListBox();
-            this.FileLB2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonClearPL = new System.Windows.Forms.Button();
             this.buttonSort = new System.Windows.Forms.Button();
             this.buttonRepeatPL = new System.Windows.Forms.Button();
@@ -73,6 +69,10 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonPrev = new System.Windows.Forms.Button();
+            this.DriveLB = new Microsoft.VisualBasic.Compatibility.VB6.DriveListBox();
+            this.DirLB = new Microsoft.VisualBasic.Compatibility.VB6.DirListBox();
+            this.FileLB2 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackLength)).BeginInit();
@@ -82,16 +82,15 @@
             // 
             // playListLB
             // 
-            this.playListLB.BackColor = System.Drawing.Color.Gray;
+            this.playListLB.BackColor = System.Drawing.SystemColors.Menu;
             this.playListLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.playListLB.ContextMenuStrip = this.contextMenu;
             this.playListLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.playListLB.ForeColor = System.Drawing.SystemColors.Info;
             this.playListLB.FormattingEnabled = true;
             this.playListLB.ItemHeight = 16;
-            this.playListLB.Location = new System.Drawing.Point(681, 57);
+            this.playListLB.Location = new System.Drawing.Point(681, 118);
             this.playListLB.Name = "playListLB";
-            this.playListLB.Size = new System.Drawing.Size(529, 354);
+            this.playListLB.Size = new System.Drawing.Size(529, 402);
             this.playListLB.TabIndex = 3;
             this.playListLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.playListLB_KeyDown);
             this.playListLB.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.playListLB_MouseDoubleClick);
@@ -114,22 +113,21 @@
             // 
             // trackVolume
             // 
-            this.trackVolume.BackColor = System.Drawing.Color.Gray;
-            this.trackVolume.Location = new System.Drawing.Point(964, 437);
+            this.trackVolume.BackColor = System.Drawing.Color.White;
+            this.trackVolume.Location = new System.Drawing.Point(964, 532);
             this.trackVolume.Maximum = 100;
             this.trackVolume.Name = "trackVolume";
             this.trackVolume.Size = new System.Drawing.Size(241, 45);
             this.trackVolume.TabIndex = 4;
             this.trackVolume.Value = 50;
             this.trackVolume.Scroll += new System.EventHandler(this.trackVolume_Scroll);
-            this.trackVolume.KeyDown += new System.Windows.Forms.KeyEventHandler(this.trackVolume_KeyDown);
             // 
             // trackLength
             // 
-            this.trackLength.Location = new System.Drawing.Point(681, 497);
+            this.trackLength.Location = new System.Drawing.Point(681, 592);
             this.trackLength.Maximum = 0;
             this.trackLength.Name = "trackLength";
-            this.trackLength.Size = new System.Drawing.Size(524, 45);
+            this.trackLength.Size = new System.Drawing.Size(508, 45);
             this.trackLength.TabIndex = 5;
             this.trackLength.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackLength.Scroll += new System.EventHandler(this.trackLength_Scroll);
@@ -143,8 +141,8 @@
             // 
             this.labelCurrentPosition.AutoSize = true;
             this.labelCurrentPosition.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCurrentPosition.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.labelCurrentPosition.Location = new System.Drawing.Point(681, 520);
+            this.labelCurrentPosition.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelCurrentPosition.Location = new System.Drawing.Point(686, 619);
             this.labelCurrentPosition.Name = "labelCurrentPosition";
             this.labelCurrentPosition.Size = new System.Drawing.Size(41, 18);
             this.labelCurrentPosition.TabIndex = 6;
@@ -154,8 +152,8 @@
             // 
             this.labelLength.AutoSize = true;
             this.labelLength.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLength.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.labelLength.Location = new System.Drawing.Point(1164, 520);
+            this.labelLength.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelLength.Location = new System.Drawing.Point(1148, 619);
             this.labelLength.Name = "labelLength";
             this.labelLength.Size = new System.Drawing.Size(41, 18);
             this.labelLength.TabIndex = 7;
@@ -201,8 +199,8 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSearch.ForeColor = System.Drawing.SystemColors.Info;
-            this.labelSearch.Location = new System.Drawing.Point(304, 34);
+            this.labelSearch.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelSearch.Location = new System.Drawing.Point(317, 88);
             this.labelSearch.Name = "labelSearch";
             this.labelSearch.Size = new System.Drawing.Size(155, 18);
             this.labelSearch.TabIndex = 11;
@@ -211,7 +209,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearch.Location = new System.Drawing.Point(465, 31);
+            this.textBoxSearch.Location = new System.Drawing.Point(478, 85);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(174, 23);
             this.textBoxSearch.TabIndex = 12;
@@ -225,16 +223,17 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.плейлистToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1224, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -244,26 +243,29 @@
             this.плейлистToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьToolStripMenuItem,
             this.сохранитьToolStripMenuItem});
-            this.плейлистToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.плейлистToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.плейлистToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
             this.плейлистToolStripMenuItem.Name = "плейлистToolStripMenuItem";
-            this.плейлистToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.плейлистToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.плейлистToolStripMenuItem.Text = "Плей-лист";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.открытьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.открытьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.сохранитьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.сохранитьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
@@ -274,16 +276,17 @@
             this.повторятьТрекToolStripMenuItem,
             this.повторятьПлейлистToolStripMenuItem,
             this.вСлучайномПорядкеToolStripMenuItem});
-            this.настройкиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.настройкиToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.настройкиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // повторятьТрекToolStripMenuItem
             // 
             this.повторятьТрекToolStripMenuItem.CheckOnClick = true;
             this.повторятьТрекToolStripMenuItem.Name = "повторятьТрекToolStripMenuItem";
-            this.повторятьТрекToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.повторятьТрекToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.повторятьТрекToolStripMenuItem.Text = "Повторять трек";
             this.повторятьТрекToolStripMenuItem.CheckedChanged += new System.EventHandler(this.повторятьТрекToolStripMenuItem_CheckedChanged);
             this.повторятьТрекToolStripMenuItem.Click += new System.EventHandler(this.buttonRepeatSong_Click);
@@ -291,7 +294,7 @@
             // повторятьПлейлистToolStripMenuItem
             // 
             this.повторятьПлейлистToolStripMenuItem.Name = "повторятьПлейлистToolStripMenuItem";
-            this.повторятьПлейлистToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.повторятьПлейлистToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.повторятьПлейлистToolStripMenuItem.Text = "Повторять плей-лист";
             this.повторятьПлейлистToolStripMenuItem.Click += new System.EventHandler(this.buttonRepeatPL_Click);
             // 
@@ -299,15 +302,17 @@
             // 
             this.вСлучайномПорядкеToolStripMenuItem.CheckOnClick = true;
             this.вСлучайномПорядкеToolStripMenuItem.Name = "вСлучайномПорядкеToolStripMenuItem";
-            this.вСлучайномПорядкеToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.вСлучайномПорядкеToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.вСлучайномПорядкеToolStripMenuItem.Text = "В случайном порядке";
             this.вСлучайномПорядкеToolStripMenuItem.Click += new System.EventHandler(this.buttonRand_Click);
             // 
             // справкаToolStripMenuItem
             // 
-            this.справкаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.справкаToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
+            this.справкаToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.справкаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
@@ -315,8 +320,8 @@
             // 
             this.labelCurrentSong.AutoSize = true;
             this.labelCurrentSong.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCurrentSong.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.labelCurrentSong.Location = new System.Drawing.Point(681, 476);
+            this.labelCurrentSong.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelCurrentSong.Location = new System.Drawing.Point(681, 571);
             this.labelCurrentSong.Name = "labelCurrentSong";
             this.labelCurrentSong.Size = new System.Drawing.Size(123, 18);
             this.labelCurrentSong.TabIndex = 17;
@@ -326,8 +331,8 @@
             // 
             this.labelCurrentSongName.AutoSize = true;
             this.labelCurrentSongName.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCurrentSongName.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.labelCurrentSongName.Location = new System.Drawing.Point(810, 476);
+            this.labelCurrentSongName.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.labelCurrentSongName.Location = new System.Drawing.Point(810, 571);
             this.labelCurrentSongName.Name = "labelCurrentSongName";
             this.labelCurrentSongName.Size = new System.Drawing.Size(29, 18);
             this.labelCurrentSongName.TabIndex = 19;
@@ -338,7 +343,7 @@
             this.FileLB.ContextMenuStrip = this.contextMenu2;
             this.FileLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FileLB.FormattingEnabled = true;
-            this.FileLB.Location = new System.Drawing.Point(320, 59);
+            this.FileLB.Location = new System.Drawing.Point(333, 117);
             this.FileLB.Name = "FileLB";
             this.FileLB.Pattern = "*.mp3";
             this.FileLB.Size = new System.Drawing.Size(319, 564);
@@ -349,57 +354,12 @@
             this.FileLB.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB_MouseDoubleClick);
             this.FileLB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FileLB_MouseDown);
             // 
-            // DriveLB
-            // 
-            this.DriveLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DriveLB.FormattingEnabled = true;
-            this.DriveLB.Location = new System.Drawing.Point(12, 27);
-            this.DriveLB.Name = "DriveLB";
-            this.DriveLB.Size = new System.Drawing.Size(121, 25);
-            this.DriveLB.TabIndex = 21;
-            this.DriveLB.SelectedIndexChanged += new System.EventHandler(this.DriveLB_SelectedIndexChanged);
-            this.DriveLB.Click += new System.EventHandler(this.DriveLB_Click);
-            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            // 
-            // DirLB
-            // 
-            this.DirLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DirLB.FormattingEnabled = true;
-            this.DirLB.IntegralHeight = false;
-            this.DirLB.Location = new System.Drawing.Point(12, 58);
-            this.DirLB.Name = "DirLB";
-            this.DirLB.Size = new System.Drawing.Size(302, 565);
-            this.DirLB.TabIndex = 22;
-            this.DirLB.Change += new System.EventHandler(this.DirLB_Change);
-            // 
-            // FileLB2
-            // 
-            this.FileLB2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FileLB2.FormattingEnabled = true;
-            this.FileLB2.ItemHeight = 16;
-            this.FileLB2.Location = new System.Drawing.Point(320, 59);
-            this.FileLB2.Name = "FileLB2";
-            this.FileLB2.Size = new System.Drawing.Size(319, 564);
-            this.FileLB2.TabIndex = 32;
-            this.FileLB2.Visible = false;
-            this.FileLB2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB2_MouseDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(207, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // buttonClearPL
             // 
             this.buttonClearPL.BackgroundImage = global::Музыкальный_плеер.Properties.Resources.if_023_Document_Delete_183585;
             this.buttonClearPL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonClearPL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClearPL.Location = new System.Drawing.Point(716, 27);
+            this.buttonClearPL.Location = new System.Drawing.Point(715, 85);
             this.buttonClearPL.Name = "buttonClearPL";
             this.buttonClearPL.Size = new System.Drawing.Size(29, 29);
             this.buttonClearPL.TabIndex = 34;
@@ -412,7 +372,7 @@
             this.buttonSort.BackgroundImage = global::Музыкальный_плеер.Properties.Resources.if_BT_sort_az_905641;
             this.buttonSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSort.Location = new System.Drawing.Point(681, 27);
+            this.buttonSort.Location = new System.Drawing.Point(680, 85);
             this.buttonSort.Name = "buttonSort";
             this.buttonSort.Size = new System.Drawing.Size(29, 29);
             this.buttonSort.TabIndex = 31;
@@ -428,7 +388,7 @@
             this.buttonRepeatPL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonRepeatPL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonRepeatPL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRepeatPL.Location = new System.Drawing.Point(1100, 548);
+            this.buttonRepeatPL.Location = new System.Drawing.Point(1100, 643);
             this.buttonRepeatPL.Name = "buttonRepeatPL";
             this.buttonRepeatPL.Size = new System.Drawing.Size(45, 39);
             this.buttonRepeatPL.TabIndex = 30;
@@ -444,7 +404,7 @@
             this.buttonRepeatSong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonRepeatSong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonRepeatSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRepeatSong.Location = new System.Drawing.Point(1049, 548);
+            this.buttonRepeatSong.Location = new System.Drawing.Point(1049, 643);
             this.buttonRepeatSong.Name = "buttonRepeatSong";
             this.buttonRepeatSong.Size = new System.Drawing.Size(45, 39);
             this.buttonRepeatSong.TabIndex = 29;
@@ -460,7 +420,7 @@
             this.buttonRand.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonRand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonRand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRand.Location = new System.Drawing.Point(998, 548);
+            this.buttonRand.Location = new System.Drawing.Point(998, 643);
             this.buttonRand.Name = "buttonRand";
             this.buttonRand.Size = new System.Drawing.Size(45, 39);
             this.buttonRand.TabIndex = 28;
@@ -476,7 +436,7 @@
             this.buttonStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStop.Location = new System.Drawing.Point(947, 548);
+            this.buttonStop.Location = new System.Drawing.Point(947, 643);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(45, 39);
             this.buttonStop.TabIndex = 27;
@@ -492,7 +452,7 @@
             this.buttonPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPause.Location = new System.Drawing.Point(896, 548);
+            this.buttonPause.Location = new System.Drawing.Point(896, 643);
             this.buttonPause.Name = "buttonPause";
             this.buttonPause.Size = new System.Drawing.Size(45, 39);
             this.buttonPause.TabIndex = 26;
@@ -508,7 +468,7 @@
             this.buttonNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.Location = new System.Drawing.Point(845, 548);
+            this.buttonNext.Location = new System.Drawing.Point(845, 643);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(45, 39);
             this.buttonNext.TabIndex = 25;
@@ -524,7 +484,7 @@
             this.buttonPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlay.Location = new System.Drawing.Point(794, 548);
+            this.buttonPlay.Location = new System.Drawing.Point(794, 643);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(45, 39);
             this.buttonPlay.TabIndex = 24;
@@ -540,7 +500,7 @@
             this.buttonPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.buttonPrev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.buttonPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPrev.Location = new System.Drawing.Point(743, 548);
+            this.buttonPrev.Location = new System.Drawing.Point(743, 643);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(45, 39);
             this.buttonPrev.TabIndex = 23;
@@ -548,12 +508,59 @@
             this.buttonPrev.UseVisualStyleBackColor = true;
             this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
+            // DriveLB
+            // 
+            this.DriveLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DriveLB.FormattingEnabled = true;
+            this.DriveLB.Location = new System.Drawing.Point(12, 85);
+            this.DriveLB.Name = "DriveLB";
+            this.DriveLB.Size = new System.Drawing.Size(121, 25);
+            this.DriveLB.TabIndex = 21;
+            this.DriveLB.SelectedIndexChanged += new System.EventHandler(this.DriveLB_SelectedIndexChanged);
+            this.DriveLB.Click += new System.EventHandler(this.DriveLB_Click);
+            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            // 
+            // DirLB
+            // 
+            this.DirLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DirLB.FormattingEnabled = true;
+            this.DirLB.IntegralHeight = false;
+            this.DirLB.Location = new System.Drawing.Point(12, 116);
+            this.DirLB.Name = "DirLB";
+            this.DirLB.Size = new System.Drawing.Size(302, 565);
+            this.DirLB.TabIndex = 22;
+            this.DirLB.Change += new System.EventHandler(this.DirLB_Change);
+            // 
+            // FileLB2
+            // 
+            this.FileLB2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FileLB2.FormattingEnabled = true;
+            this.FileLB2.ItemHeight = 16;
+            this.FileLB2.Location = new System.Drawing.Point(333, 117);
+            this.FileLB2.Name = "FileLB2";
+            this.FileLB2.Size = new System.Drawing.Size(319, 564);
+            this.FileLB2.TabIndex = 32;
+            this.FileLB2.Visible = false;
+            this.FileLB2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB2_MouseDoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(750, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 29);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "URL";
+            this.toolTip1.SetToolTip(this.button1, "Добавить песню по URl-адресу");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1224, 641);
+            this.ClientSize = new System.Drawing.Size(1240, 700);
             this.Controls.Add(this.buttonClearPL);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FileLB2);
@@ -581,10 +588,9 @@
             this.Controls.Add(this.playListLB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1240, 680);
-            this.MinimumSize = new System.Drawing.Size(1240, 680);
+            this.MaximumSize = new System.Drawing.Size(1240, 700);
+            this.MinimumSize = new System.Drawing.Size(1240, 700);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Музыкальный плеер";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenu.ResumeLayout(false);

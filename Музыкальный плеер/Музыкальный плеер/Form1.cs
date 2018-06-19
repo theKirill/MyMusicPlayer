@@ -5,10 +5,11 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using MetroFramework.Forms;
 
 namespace Музыкальный_плеер
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroForm
     {
         int oldIndexDrive = 0;
         string oldDir = "";
@@ -39,17 +40,12 @@ namespace Музыкальный_плеер
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //wmp.settings.volume = trackVolume.Value;
-            // pL.ChangeVolume(trackVolume.Value);
             pL.Volume = trackVolume.Value;
             oldIndexDrive = DriveLB.SelectedIndex;
-            //timer.Enabled = true;
         }
 
         private void trackVolume_Scroll(object sender, EventArgs e)
         {
-            //wmp.settings.volume = trackVolume.Value;
-            //pL.ChangeVolume(trackVolume.Value);
             pL.Volume = trackVolume.Value;
             toolTip1.SetToolTip(trackVolume, trackVolume.Value.ToString());
             wmp.settings.volume = trackVolume.Value;
@@ -57,28 +53,15 @@ namespace Музыкальный_плеер
 
         private void trackLength_Scroll(object sender, EventArgs e)
         {
-            //wmp.controls.currentPosition = trackLength.Value;
-            //pL.ChangeCurrentPosition(trackLength.Value);
             pL.CurrentPosition = trackLength.Value;
             toolTip1.SetToolTip(trackLength, trackLength.Value.ToString());
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            //trackLength.Maximum = Convert.ToInt32(pL.Playlist.ElementAt(pL.NumberOfCurrentSong).Length);
-            //wmp.URL = playListLB.SelectedItem.ToString();
-            //wmp.settings.volume = 0;
-            //wmp.controls.play();
-            //trackLength.Maximum = Convert.ToInt32(wmp.currentMedia.duration);
-            //                   trackLength.Value = Convert.ToInt32(pL.CurrentPosition);  
-            // wmp.URL = (pL.Playlist.ElementAt(pL.NumberOfCurrentSong)).Path;
-            //double kek= wmp.currentMedia.duration;
-            // Convert.ToInt32(pL.Playlist.ElementAt(pL.NumberOfCurrentSong).Length);
-            // trackLength.Maximum = 195;
-            // trackLength.Value = Convert.ToInt32(pL.CurrentPosition);
             if (pL.NumberOfCurrentSong != -1)
             {
-                trackLength.Maximum = Convert.ToInt32(pL.Length);
+                trackLength.Maximum = Convert.ToInt32(pL.LengthOfCurrentSong);
                 trackLength.Value = Convert.ToInt32(pL.CurrentPosition);
                 labelCurrentPosition.Text = pL.CurrentPositionStr;
                 labelLength.Text = pL.LengthOfCurrentSongStr;
@@ -98,7 +81,7 @@ namespace Музыкальный_плеер
 
                 if (вСлучайномПорядкеToolStripMenuItem.Checked)
                 {
-                    if (pL.CurrentPosition + 1 >= pL.Length)
+                    if (pL.CurrentPosition + 1 >= pL.LengthOfCurrentSong)
                     {
                         if (!повторятьТрекToolStripMenuItem.Checked)
                         {
@@ -115,7 +98,7 @@ namespace Музыкальный_плеер
                 {
                     if (pL.NumberOfCurrentSong != pL.Playlist.Count - 1)
                     {
-                        if (pL.CurrentPosition + 1 >= pL.Length)
+                        if (pL.CurrentPosition + 1 >= pL.LengthOfCurrentSong)
                         {
                             if (!повторятьТрекToolStripMenuItem.Checked)
                             {
@@ -123,12 +106,11 @@ namespace Музыкальный_плеер
                                 playListLB.SelectedIndex = pL.NumberOfCurrentSong;
                             }
                             pL.Play();
-                            //wmp.URL = playListLB.SelectedItem.ToString();//
                         }
                     }
                     else
                     {
-                        if (pL.CurrentPosition + 1 >= pL.Length)
+                        if (pL.CurrentPosition + 1 >= pL.LengthOfCurrentSong)
                             if (!повторятьПлейлистToolStripMenuItem.Checked)
                             {
                                 if (!повторятьТрекToolStripMenuItem.Checked)
@@ -180,15 +162,6 @@ namespace Музыкальный_плеер
             FileLB.Visible = true;
             FileLB2.Visible = false;
             textBoxSearch.Text = "";
-            //string[] files = Directory.GetFiles(DirLB.get_DirList(DirLB.DirListIndex));
-            //FileLB.Items.Clear();
-
-            //foreach (string file in files)
-            //{
-            //    string extension = file.Substring(file.Length-4);
-            //    if (extension==".mp3" || extension == ".wav")
-            //    FileLB.Items.Add(file.Substring(file.LastIndexOf('\\')+1));
-            //}
         }
 
         private void FileLB_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -199,18 +172,16 @@ namespace Музыкальный_плеер
                 FileLB.SelectedIndex = y;
 
                 pL.AddSong(new AudioFile(FileLB.Path + "\\" + FileLB.SelectedItem));
-                //playListLB.Items.Add(FileLB.Path + "\\"+ FileLB.SelectedItem);
             }
             catch
             {
                 FileLB.SelectedIndex = 0;
                 pL.AddSong(new AudioFile(FileLB.Path + "\\" + FileLB.SelectedItem));
-                //playListLB.Items.Add(FileLB.Path + "\\" + FileLB.SelectedItem);
             }
             finally
             {
-                RefreshLBPL();
-                wmp.settings.volume = 0;
+                playListLB.Items.Add(FileLB.Path + "\\" + FileLB.SelectedItem);
+                //wmp.settings.volume = 0;
             }
         }
 
@@ -232,19 +203,14 @@ namespace Музыкальный_плеер
 
         private void playListLB_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //if (wmp.URL != playListLB.SelectedItem.ToString())
-            //{
-            if (pL.Playlist.Count >= 2)
+            if (pL.Play())
             {
                 pL.NumberOfCurrentSong = playListLB.SelectedIndex;
                 pL.Volume = trackVolume.Value;
                 pL.Play();
-                // wmp.URL = playListLB.SelectedItem.ToString();
                 timer.Enabled = true;
+                stop = false;
             }
-            else
-                MessageBox.Show("Плей-лист должен содержать минимум две песни!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -333,7 +299,7 @@ namespace Музыкальный_плеер
         private void прослушатьToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!pause || wmp.URL != FileLB.Path + FileLB.SelectedItem)
-                wmp.URL = FileLB.Path + FileLB.SelectedItem;
+                wmp.URL = FileLB.Path + "\\"+FileLB.SelectedItem;
             else
                 pause = false;
             wmp.settings.volume = trackVolume.Value;
@@ -374,7 +340,7 @@ namespace Музыкальный_плеер
                     стопToolStripMenuItem.Enabled = false;
                 }
                 else
-                if (wmp.URL == FileLB.Path + FileLB.SelectedItem)
+                if (wmp.URL == FileLB.Path + "\\"+FileLB.SelectedItem|| wmp.URL == FileLB.Path + FileLB.SelectedItem)
                 {
                     if (!pause)
                     {
@@ -512,49 +478,6 @@ namespace Музыкальный_плеер
 
         }
 
-        private void trackVolume_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-                try
-                {
-                    trackVolume.Value += 5;
-                }
-                catch
-                {
-                    trackVolume.Value = trackVolume.Maximum;
-                }
-            else
-                 if (e.KeyCode == Keys.Down)
-                try
-                {
-                    trackVolume.Value -= 5;
-                }
-                catch
-                {
-                    trackVolume.Value = trackVolume.Minimum;
-                }
-            else
-              if (e.KeyCode == Keys.Left)
-                try
-                {
-                    trackLength.Value -= 5;
-                }
-                catch
-                {
-                    trackLength.Value = trackLength.Minimum;
-                }
-            else
-                 if (e.KeyCode == Keys.Right)
-                try
-                {
-                    trackLength.Value += 5;
-                }
-                catch
-                {
-                    trackLength.Value = trackLength.Maximum;
-                }
-        }
-
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             if (pL.Play())
@@ -571,7 +494,6 @@ namespace Музыкальный_плеер
             pL.Pause();
             timer.Enabled = false;
             labelCurrentSongName.Text = "---";
-            //wmp.controls.pause();
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
@@ -692,30 +614,36 @@ namespace Музыкальный_плеер
 
         private void buttonSort_Click(object sender, EventArgs e)
         {
-            List<string> files = new List<string>();
-            bool sortByName = false;
-
-            if (MessageBox.Show("Сортировать по имени файла? - Нажмите \"Да\",\nиначе нажмите \"Нет\"", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                sortByName = true;
-
-            for (int i = 0; i < playListLB.Items.Count; i++)
+            if (pL.Playlist.Count != 0)
             {
-                playListLB.SelectedIndex = i;
-                files.Add(playListLB.SelectedItem.ToString());
+
+                List<string> files = new List<string>();
+                bool sortByName = false;
+
+                if (MessageBox.Show("Сортировать по имени файла? - Нажмите \"Да\",\nиначе нажмите \"Нет\"", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    sortByName = true;
+
+                for (int i = 0; i < playListLB.Items.Count; i++)
+                {
+                    playListLB.SelectedIndex = i;
+                    files.Add(playListLB.SelectedItem.ToString());
+                }
+                playListLB.SelectedIndex = -1;
+
+                if (MessageBox.Show("Сортировать по возрастанию?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    files.Sort(new Compare(true, sortByName));
+                else
+                    files.Sort(new Compare(false, sortByName));
+
+                playListLB.Items.Clear();
+
+                foreach (string audio in files)
+                    playListLB.Items.Add(audio);
+
+                RefreshPlayList(files);
             }
-            playListLB.SelectedIndex = -1;
-
-            if (MessageBox.Show("Сортировать по возрастанию?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                files.Sort(new Compare(true, sortByName));
             else
-                files.Sort(new Compare(false, sortByName));
-
-            playListLB.Items.Clear();
-
-            foreach (string audio in files)
-                playListLB.Items.Add(audio);
-
-            RefreshPlayList(files);
+                MessageBox.Show("В плей-листе нет композиций", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void PreprocessStrongSuffix(int[] shift, int[] bpos, string pat, int m)
@@ -789,16 +717,13 @@ namespace Музыкальный_плеер
             {
                 int y = e.Y / FileLB2.GetItemHeight(1);
                 FileLB2.SelectedIndex = y;
-
                 pL.AddSong(new AudioFile(filesForSearch[FileLB2.SelectedIndex]));
-                //playListLB.Items.Add(FileLB.Path + "\\"+ FileLB.SelectedItem);
             }
             catch
             {
                 FileLB2.SelectedIndex = 0;
                 List<string> kek = filesForSearch;
                 pL.AddSong(new AudioFile(filesForSearch[FileLB2.SelectedIndex]));
-                //playListLB.Items.Add(FileLB.Path + "\\" + FileLB.SelectedItem);
             }
             finally
             {
@@ -809,9 +734,20 @@ namespace Музыкальный_плеер
 
         private void button1_Click(object sender, EventArgs e)
         {
-            wmp.URL = "http://cdndl.zaycev.net/2976/7417939/adele_-_rolling_in_the_deep_%28zaycev.net%29.mp3";
-            wmp.settings.volume = 100;
-            wmp.controls.play();
+            //wmp.URL = "http://cdndl.zaycev.net/2976/7417939/adele_-_rolling_in_the_deep_%28zaycev.net%29.mp3";
+            //wmp.settings.volume = 100;
+            //wmp.controls.play();
+            AddSongFromSite form2 = new AddSongFromSite();
+            form2.ShowDialog();
+            if (form2.input)
+            {
+                Parser kek = new Parser();
+                kek.BaseURL = form2.URL;
+                ParserWorker parser = new ParserWorker(kek);
+                parser.Start();
+                playListLB.Items.Add(form2.URL);
+                pL.AddSong(new AudioFile(form2.URL));
+            }
         }
 
         private void buttonClearPL_Click(object sender, EventArgs e)
@@ -828,41 +764,6 @@ namespace Музыкальный_плеер
             labelCurrentSongName.Text = "---";
         }
         //регулярные выражения
-        //int BMSearch(char*string, char* substring)
-        //{
-        //    int sl, ssl;
-        //    int res = -1;
-        //    sl = strlen(string);
-        //    ssl = strlen(substring);
-        //    else
-        //    {
-        //        int i, Pos;
-        //        int BMT[256];
-        //        for (i = 0; i < 256; i++)
-        //            BMT[i] = ssl;
-        //        for (i = ssl - 1; i >= 0; i--)
-        //            if (BMT[(short)(substring[i])] == ssl)
-        //                BMT[(short)(substring[i])] = ssl - i - 1;
-        //        Pos = ssl - 1;
-        //        while (Pos < sl)
-        //            if (substring[ssl - 1] != string[Pos])
-        //                Pos = Pos + BMT[(short)(string[Pos])];
-        //            else
-        //                for (i = ssl - 2; i >= 0; i--)
-        //                {
-        //                    if (substring[i] != string[Pos - ssl + i + 1])
-        //                    {
-        //                        Pos += BMT[(short)(string[Pos - ssl + i + 1])] - 1;
-        //                        break;
-        //                    }
-        //                    else
-        //                      if (i == 0)
-        //                        return Pos - ssl + 1;
-        //                    cout << "\t" << i << endl;
-        //                }
-        //    }
-        //    return res;
-        //}
     }
 
     public class Compare : IComparer<string>//класс для сравнения строк
