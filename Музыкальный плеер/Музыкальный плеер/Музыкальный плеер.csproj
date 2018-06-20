@@ -73,11 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddSongFromSite.cs">
+    <Compile Include="ListenSongFromSite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSongFromSite.Designer.cs">
-      <DependentUpon>AddSongFromSite.cs</DependentUpon>
+    <Compile Include="ListenSongFromSite.Designer.cs">
+      <DependentUpon>ListenSongFromSite.cs</DependentUpon>
     </Compile>
     <Compile Include="AudioFile.cs" />
     <Compile Include="Form1.cs">
@@ -93,8 +93,8 @@
     <Compile Include="PlayList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddSongFromSite.resx">
-      <DependentUpon>AddSongFromSite.cs</DependentUpon>
+    <EmbeddedResource Include="ListenSongFromSite.resx">
+      <DependentUpon>ListenSongFromSite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -183,6 +183,8 @@
   <ItemGroup>
     <Content Include="MetroFramework.dll" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\21945286.gif" />
+    <None Include="Resources\flash_ddr__custom_songs_by_dl33t-d4w7kzx.gif" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

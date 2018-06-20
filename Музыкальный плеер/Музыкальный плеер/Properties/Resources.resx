@@ -121,20 +121,23 @@
   <data name="if_controls_chapter_previous_103454" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_controls_chapter_previous_103454.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_023_Document_Delete_183585" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_023_Document_Delete_183585.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_refresh_134221" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_refresh_134221.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_media-shuffle_49848" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_media-shuffle_49848.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_044_Repeat_183173" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_044_Repeat_183173.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nextstepcircularbutton_80309" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nextstepcircularbutton_80309.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_controls_stop_103461" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_controls_stop_103461.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rounded-pause-button_icon-icons.com_72587" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rounded-pause-button_icon-icons.com_72587.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop_icon-icons.com_71075" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stop_icon-icons.com_71075.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +148,17 @@
   <data name="pause_icon-icons.com_67944" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pause_icon-icons.com_67944.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rounded-pause-button_icon-icons.com_72587" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rounded-pause-button_icon-icons.com_72587.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_044_Repeat_183173" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_044_Repeat_183173.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_icon-play_211876" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_icon-play_211876.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="flash_ddr__custom_songs_by_dl33t-d4w7kzx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flash_ddr__custom_songs_by_dl33t-d4w7kzx.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Button-stop_icon-icons.com_52219" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button-stop_icon-icons.com_52219.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prev_96279" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prev_96279.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play-circle_icon-icons.com_69988" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play-circle_icon-icons.com_69988.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,13 +169,16 @@
   <data name="if_BT_sort_az_905641" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_BT_sort_az_905641.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="prev_96279" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prev_96279.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_controls_chapter_next_103453" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_controls_chapter_next_103453.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play-circle_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play-circle_icon-icons.com_699881.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_023_Document_Delete_183585" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_023_Document_Delete_183585.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="21945286" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\21945286.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

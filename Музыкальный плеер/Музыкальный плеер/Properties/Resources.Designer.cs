@@ -63,9 +63,29 @@ namespace Музыкальный_плеер.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _21945286 {
+            get {
+                object obj = ResourceManager.GetObject("21945286", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_stop_icon_icons_com_52219 {
             get {
                 object obj = ResourceManager.GetObject("Button-stop_icon-icons.com_52219", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flash_ddr__custom_songs_by_dl33t_d4w7kzx {
+            get {
+                object obj = ResourceManager.GetObject("flash_ddr__custom_songs_by_dl33t-d4w7kzx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

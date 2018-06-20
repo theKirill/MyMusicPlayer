@@ -9,13 +9,13 @@ namespace Музыкальный_плеер
         readonly HttpClient client;
         readonly string url;
 
-        public HtmlLoader(IParser settings)
+        public HtmlLoader(IParser p)
         {
             client = new HttpClient();
-            url = $"{settings.BaseURL}/";
+            url = $"{p.BaseURL}/";
         }
 
-        public async Task<string> GetSourceByPageId()
+        public async Task<string> GetSourceByPage()
         {
             var response = await client.GetAsync(url);
             string source = null;

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Музыкальный_плеер
 {
@@ -13,9 +15,7 @@ namespace Музыкальный_плеер
 
         HtmlLoader loader;
 
-        bool isActive;
-
-        #region Properties
+        string result;
 
         public IParser Parser
         {
@@ -29,41 +29,43 @@ namespace Музыкальный_плеер
             }
         }
 
-        public bool IsActive
+        public string Result
         {
             get
             {
-                return isActive;
+                return result;
             }
         }
-
-        #endregion
-
-        public event Action<object, string> OnNewData;
-        public event Action<object> OnCompleted;
 
         public ParserWorker(IParser parser)
         {
             this.parser = parser;
         }
 
-        public void Start()
+        public void ReturnResult()
         {
-            isActive = true;
-            Worker();
+            Regex regex = new Regex(@"http\S*mp3");
+            //MatchCollection matches = regex.Matches(result);
+            Match match = regex.Match(result);
+            result = match.Value;
         }
 
-        public void Abort()
+        public async void Start(ListenSongFromSite form)
         {
-            isActive = false;
-        }
-
-        private async void Worker()
-        {
-            var source = await loader.GetSourceByPageId();
-            var domParser = new HtmlParser();
-            var document = await domParser.ParseAsync(source);
-            string result = parser.Parse(document);
+            try
+            {
+                loader = new HtmlLoader(parser);
+                var source = await loader.GetSourceByPage();
+                var domParser = new HtmlParser();
+                var document = await domParser.ParseAsync(source);
+                result = parser.Parse(document);
+                ReturnResult();
+                form.Close();
+            }
+            catch
+            {
+                MessageBox.Show("К сожалению, песен по данному URL-адресу не найдено!");
+            }
         }
     }
 }

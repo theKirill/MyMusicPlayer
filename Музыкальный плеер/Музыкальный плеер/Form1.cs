@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
 using MetroFramework.Forms;
+using System.Text.RegularExpressions;
 
 namespace Музыкальный_плеер
 {
@@ -61,12 +62,12 @@ namespace Музыкальный_плеер
         {
             if (pL.NumberOfCurrentSong != -1)
             {
-                trackLength.Maximum = Convert.ToInt32(pL.LengthOfCurrentSong);
-                trackLength.Value = Convert.ToInt32(pL.CurrentPosition);
-                labelCurrentPosition.Text = pL.CurrentPositionStr;
-                labelLength.Text = pL.LengthOfCurrentSongStr;
+                    trackLength.Maximum = Convert.ToInt32(pL.LengthOfCurrentSong);
+                    trackLength.Value = Convert.ToInt32(pL.CurrentPosition);
+                    labelCurrentPosition.Text = pL.CurrentPositionStr;
+                    labelLength.Text = pL.LengthOfCurrentSongStr;
 
-                labelCurrentSongName.Text = pL.Playlist.ElementAt(pL.NumberOfCurrentSong).Name;
+                    labelCurrentSongName.Text = pL.Playlist.ElementAt(pL.NumberOfCurrentSong).Name;        
 
                 if ((labelCurrentSongName.Left > labelCurrentSong.Left + labelCurrentSong.Width) && left)
                     labelCurrentSongName.Left -= 1;
@@ -90,6 +91,7 @@ namespace Музыкальный_плеер
                             pL.NumberOfCurrentSong = r;
                             playListLB.SelectedIndex = pL.NumberOfCurrentSong;
                         }
+                        else
                         pL.Play();
                         //wmp.URL = playListLB.SelectedItem.ToString();//
                     }
@@ -105,6 +107,7 @@ namespace Музыкальный_плеер
                                 pL.NumberOfCurrentSong += 1;
                                 playListLB.SelectedIndex = pL.NumberOfCurrentSong;
                             }
+                            else
                             pL.Play();
                         }
                     }
@@ -208,6 +211,7 @@ namespace Музыкальный_плеер
                 pL.NumberOfCurrentSong = playListLB.SelectedIndex;
                 pL.Volume = trackVolume.Value;
                 pL.Play();
+                
                 timer.Enabled = true;
                 stop = false;
             }
@@ -732,24 +736,6 @@ namespace Музыкальный_плеер
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //wmp.URL = "http://cdndl.zaycev.net/2976/7417939/adele_-_rolling_in_the_deep_%28zaycev.net%29.mp3";
-            //wmp.settings.volume = 100;
-            //wmp.controls.play();
-            AddSongFromSite form2 = new AddSongFromSite();
-            form2.ShowDialog();
-            if (form2.input)
-            {
-                Parser kek = new Parser();
-                kek.BaseURL = form2.URL;
-                ParserWorker parser = new ParserWorker(kek);
-                parser.Start();
-                playListLB.Items.Add(form2.URL);
-                pL.AddSong(new AudioFile(form2.URL));
-            }
-        }
-
         private void buttonClearPL_Click(object sender, EventArgs e)
         {
             playListLB.Items.Clear();
@@ -763,7 +749,12 @@ namespace Музыкальный_плеер
             labelLength.Text = "0:00";
             labelCurrentSongName.Text = "---";
         }
-        //регулярные выражения
+
+        private void buttonURL_Click(object sender, EventArgs e)
+        {
+            ListenSongFromSite form2 = new ListenSongFromSite();
+            form2.ShowDialog();
+        }
     }
 
     public class Compare : IComparer<string>//класс для сравнения строк

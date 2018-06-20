@@ -59,6 +59,10 @@
             this.labelCurrentSongName = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.FileLB = new Microsoft.VisualBasic.Compatibility.VB6.FileListBox();
+            this.buttonURL = new System.Windows.Forms.Button();
+            this.DriveLB = new Microsoft.VisualBasic.Compatibility.VB6.DriveListBox();
+            this.DirLB = new Microsoft.VisualBasic.Compatibility.VB6.DirListBox();
+            this.FileLB2 = new System.Windows.Forms.ListBox();
             this.buttonClearPL = new System.Windows.Forms.Button();
             this.buttonSort = new System.Windows.Forms.Button();
             this.buttonRepeatPL = new System.Windows.Forms.Button();
@@ -69,10 +73,6 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonPrev = new System.Windows.Forms.Button();
-            this.DriveLB = new Microsoft.VisualBasic.Compatibility.VB6.DriveListBox();
-            this.DirLB = new Microsoft.VisualBasic.Compatibility.VB6.DirListBox();
-            this.FileLB2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.contextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackLength)).BeginInit();
@@ -144,9 +144,9 @@
             this.labelCurrentPosition.ForeColor = System.Drawing.SystemColors.Desktop;
             this.labelCurrentPosition.Location = new System.Drawing.Point(686, 619);
             this.labelCurrentPosition.Name = "labelCurrentPosition";
-            this.labelCurrentPosition.Size = new System.Drawing.Size(41, 18);
+            this.labelCurrentPosition.Size = new System.Drawing.Size(50, 18);
             this.labelCurrentPosition.TabIndex = 6;
-            this.labelCurrentPosition.Text = "0:00";
+            this.labelCurrentPosition.Text = "00:00";
             // 
             // labelLength
             // 
@@ -155,9 +155,9 @@
             this.labelLength.ForeColor = System.Drawing.SystemColors.Desktop;
             this.labelLength.Location = new System.Drawing.Point(1148, 619);
             this.labelLength.Name = "labelLength";
-            this.labelLength.Size = new System.Drawing.Size(41, 18);
+            this.labelLength.Size = new System.Drawing.Size(50, 18);
             this.labelLength.TabIndex = 7;
-            this.labelLength.Text = "0:00";
+            this.labelLength.Text = "00:00";
             // 
             // openFileDialog
             // 
@@ -255,7 +255,7 @@
             this.открытьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.открытьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
@@ -265,7 +265,7 @@
             this.сохранитьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9F);
             this.сохранитьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
@@ -353,6 +353,54 @@
             this.FileLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FileLB_KeyDown);
             this.FileLB.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB_MouseDoubleClick);
             this.FileLB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FileLB_MouseDown);
+            // 
+            // buttonURL
+            // 
+            this.buttonURL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonURL.Location = new System.Drawing.Point(750, 85);
+            this.buttonURL.Name = "buttonURL";
+            this.buttonURL.Size = new System.Drawing.Size(54, 29);
+            this.buttonURL.TabIndex = 33;
+            this.buttonURL.Text = "URL";
+            this.toolTip1.SetToolTip(this.buttonURL, "Прослушать песню по URl-адресу");
+            this.buttonURL.UseVisualStyleBackColor = true;
+            this.buttonURL.Click += new System.EventHandler(this.buttonURL_Click);
+            // 
+            // DriveLB
+            // 
+            this.DriveLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DriveLB.FormattingEnabled = true;
+            this.DriveLB.Location = new System.Drawing.Point(12, 85);
+            this.DriveLB.Name = "DriveLB";
+            this.DriveLB.Size = new System.Drawing.Size(121, 25);
+            this.DriveLB.TabIndex = 21;
+            this.DriveLB.SelectedIndexChanged += new System.EventHandler(this.DriveLB_SelectedIndexChanged);
+            this.DriveLB.Click += new System.EventHandler(this.DriveLB_Click);
+            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            // 
+            // DirLB
+            // 
+            this.DirLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DirLB.FormattingEnabled = true;
+            this.DirLB.IntegralHeight = false;
+            this.DirLB.Location = new System.Drawing.Point(12, 116);
+            this.DirLB.Name = "DirLB";
+            this.DirLB.Size = new System.Drawing.Size(302, 565);
+            this.DirLB.TabIndex = 22;
+            this.DirLB.Change += new System.EventHandler(this.DirLB_Change);
+            // 
+            // FileLB2
+            // 
+            this.FileLB2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FileLB2.FormattingEnabled = true;
+            this.FileLB2.ItemHeight = 16;
+            this.FileLB2.Location = new System.Drawing.Point(333, 117);
+            this.FileLB2.Name = "FileLB2";
+            this.FileLB2.Size = new System.Drawing.Size(319, 564);
+            this.FileLB2.TabIndex = 32;
+            this.FileLB2.Visible = false;
+            this.FileLB2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB2_MouseDoubleClick);
             // 
             // buttonClearPL
             // 
@@ -508,61 +556,13 @@
             this.buttonPrev.UseVisualStyleBackColor = true;
             this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
-            // DriveLB
-            // 
-            this.DriveLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DriveLB.FormattingEnabled = true;
-            this.DriveLB.Location = new System.Drawing.Point(12, 85);
-            this.DriveLB.Name = "DriveLB";
-            this.DriveLB.Size = new System.Drawing.Size(121, 25);
-            this.DriveLB.TabIndex = 21;
-            this.DriveLB.SelectedIndexChanged += new System.EventHandler(this.DriveLB_SelectedIndexChanged);
-            this.DriveLB.Click += new System.EventHandler(this.DriveLB_Click);
-            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            // 
-            // DirLB
-            // 
-            this.DirLB.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DirLB.FormattingEnabled = true;
-            this.DirLB.IntegralHeight = false;
-            this.DirLB.Location = new System.Drawing.Point(12, 116);
-            this.DirLB.Name = "DirLB";
-            this.DirLB.Size = new System.Drawing.Size(302, 565);
-            this.DirLB.TabIndex = 22;
-            this.DirLB.Change += new System.EventHandler(this.DirLB_Change);
-            // 
-            // FileLB2
-            // 
-            this.FileLB2.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FileLB2.FormattingEnabled = true;
-            this.FileLB2.ItemHeight = 16;
-            this.FileLB2.Location = new System.Drawing.Point(333, 117);
-            this.FileLB2.Name = "FileLB2";
-            this.FileLB2.Size = new System.Drawing.Size(319, 564);
-            this.FileLB2.TabIndex = 32;
-            this.FileLB2.Visible = false;
-            this.FileLB2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.FileLB2_MouseDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(750, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 29);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "URL";
-            this.toolTip1.SetToolTip(this.button1, "Добавить песню по URl-адресу");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1240, 700);
             this.Controls.Add(this.buttonClearPL);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonURL);
             this.Controls.Add(this.FileLB2);
             this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonRepeatPL);
@@ -646,7 +646,7 @@
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonSort;
         private System.Windows.Forms.ListBox FileLB2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonURL;
         private System.Windows.Forms.Button buttonClearPL;
     }
 }
