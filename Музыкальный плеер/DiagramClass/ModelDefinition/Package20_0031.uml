@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="cc06f8e2-f4e8-4b42-83e7-10cbaea0f4b9"
+  name="Html"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="48aa1cb8-aa02-44ad-8eee-f9b6785e112a"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAngleSharp.Dom.Html"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="cc6c73ea-aa02-48e2-b582-c226adc049ab"
+        name="IHtmlDocument"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="ca6dd6b6-d2c2-481a-928f-4dfcdd9f0baf"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FМузыкальный плеер%2Fpackages%2FAngleSharp.0.9.9.2%2Flib%2Fnet45%2FAngleSharp.dll&quot; Namespace%3DAngleSharp.Dom.Html Type%3DIHtmlDocument"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f1b3593e-e460-45ad-aa5d-d0a723231cd0"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cc44789-837a-4321-8b05-526929ae0779">
+                <propertyInstance
+                  Id="59a9b03b-2209-41c9-9dfd-654faa9efbf1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03026dbe-6aa5-4a3a-acb2-37ea26983ea8">
+                <propertyInstance
+                  Id="c1b6e8c7-667e-429c-a173-c572445627ff"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4e6cf80-11e0-4143-876a-290117647fcc">
+                <propertyInstance
+                  Id="4898d771-03f2-40cc-ba24-51d5e9948d0f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="99755373-9b5d-47de-b467-e22477e6978e">
+                <propertyInstance
+                  Id="e22be548-1a1f-469e-afab-fefa41dd3e2b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

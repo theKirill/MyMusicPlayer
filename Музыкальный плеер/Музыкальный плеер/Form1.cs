@@ -318,36 +318,42 @@ namespace Музыкальный_плеер
             if (count != 0)
             {
                 if (FileLB.SelectedIndex == -1)
-                    MessageBox.Show("Выберите нужный трек!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                if (count == 0)
                 {
+                    MessageBox.Show("Выберите нужный трек!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     прослушатьToolStripMenuItem.Enabled = false;
                     паузаToolStripMenuItem.Enabled = false;
                     стопToolStripMenuItem.Enabled = false;
                 }
                 else
-                if (wmp.URL == FileLB.Path + "\\"+FileLB.SelectedItem|| wmp.URL == FileLB.Path + FileLB.SelectedItem)
                 {
-                    if (!pause)
+                    if (wmp.URL == FileLB.Path + "\\" + FileLB.SelectedItem || wmp.URL == FileLB.Path + FileLB.SelectedItem)
                     {
-                        прослушатьToolStripMenuItem.Enabled = true;
-                        паузаToolStripMenuItem.Enabled = true;
-                        стопToolStripMenuItem.Enabled = true;
+                        if (!pause)
+                        {
+                            прослушатьToolStripMenuItem.Enabled = true;
+                            паузаToolStripMenuItem.Enabled = true;
+                            стопToolStripMenuItem.Enabled = true;
+                        }
+                        else
+                        {
+                            прослушатьToolStripMenuItem.Enabled = true;
+                            паузаToolStripMenuItem.Enabled = false;
+                            стопToolStripMenuItem.Enabled = true;
+                        }
                     }
                     else
                     {
                         прослушатьToolStripMenuItem.Enabled = true;
                         паузаToolStripMenuItem.Enabled = false;
-                        стопToolStripMenuItem.Enabled = true;
+                        стопToolStripMenuItem.Enabled = false;
                     }
                 }
-                else
-                {
-                    прослушатьToolStripMenuItem.Enabled = true;
-                    паузаToolStripMenuItem.Enabled = false;
-                    стопToolStripMenuItem.Enabled = false;
-                }
+            }
+            else
+            {
+                прослушатьToolStripMenuItem.Enabled = false;
+                паузаToolStripMenuItem.Enabled = false;
+                стопToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -361,12 +367,6 @@ namespace Музыкальный_плеер
             {
                 удалитьToolStripMenuItem.Enabled = true;
             }
-        }
-
-        private void textBoxSearch_MouseMove(object sender, MouseEventArgs e)
-        {
-            while (MessageBox.Show("Катя, эта штука пока не работает!\nОставь её в покое!\nПоняла???", "Внимание!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
-                ;
         }
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -384,7 +384,7 @@ namespace Музыкальный_плеер
             else
             {
                 filesForSearch = Directory.GetFiles(DirLB.get_DirList(DirLB.DirListIndex)).ToList();
-                filesForSearch.TakeWhile(elem => elem.Substring(elem.Length - 4) == ".mp3");
+                //filesForSearch.TakeWhile(elem => elem.Substring(elem.Length - 4) == ".mp3");
 
                 FileLB.Visible = false;
                 FileLB2.Items.Clear();
@@ -392,7 +392,7 @@ namespace Музыкальный_плеер
                 
                 for (int i=0; i<filesForSearch.Count; i++)
                 {
-                    if (SearchSubstring(filesForSearch[i].Substring(filesForSearch[i].LastIndexOf("\\")), textBoxSearch.Text) != -1)
+                    if (SearchSubstring(filesForSearch[i].Substring(filesForSearch[i].LastIndexOf("\\")), textBoxSearch.Text) != -1 && SearchSubstring(filesForSearch[i].Substring(filesForSearch[i].LastIndexOf("\\")), ".mp3") != -1)
                         FileLB2.Items.Add(filesForSearch[i].Substring(filesForSearch[i].LastIndexOf("\\") + 1));
                     else
                     {
@@ -405,58 +405,65 @@ namespace Музыкальный_плеер
 
         private void playListLB_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Shift && e.KeyCode == Keys.Up)
+            try
             {
-                int indexOfSelectedItem = playListLB.SelectedIndex;
-
-                if (indexOfSelectedItem != 0)
+                if (e.Shift && e.KeyCode == Keys.Up)
                 {
-                    AudioFile tmpAudio = pL.Playlist.ElementAt(indexOfSelectedItem);
-                    pL.Playlist[indexOfSelectedItem] = pL.Playlist[indexOfSelectedItem - 1];
-                    pL.Playlist[indexOfSelectedItem - 1] = tmpAudio;
-                    playListLB.Items.Clear();
+                    int indexOfSelectedItem = playListLB.SelectedIndex;
 
-                    foreach (AudioFile audio in pL.Playlist)
-                        playListLB.Items.Add(audio.Path);
+                    if (indexOfSelectedItem != 0)
+                    {
+                        AudioFile tmpAudio = pL.Playlist.ElementAt(indexOfSelectedItem);
+                        pL.Playlist[indexOfSelectedItem] = pL.Playlist[indexOfSelectedItem - 1];
+                        pL.Playlist[indexOfSelectedItem - 1] = tmpAudio;
+                        playListLB.Items.Clear();
 
-                    playListLB.SelectedIndex = indexOfSelectedItem;
-                }
-            }
-            else
-            if (e.Shift && e.KeyCode == Keys.Down)
-            {
-                int indexOfSelectedItem = playListLB.SelectedIndex;
+                        foreach (AudioFile audio in pL.Playlist)
+                            playListLB.Items.Add(audio.Path);
 
-                if (indexOfSelectedItem != pL.Playlist.Count - 1)
-                {
-                    AudioFile tmpAudio = pL.Playlist.ElementAt(indexOfSelectedItem);
-                    pL.Playlist[indexOfSelectedItem] = pL.Playlist[indexOfSelectedItem + 1];
-                    pL.Playlist[indexOfSelectedItem + 1] = tmpAudio;
-                    playListLB.Items.Clear();
-
-                    foreach (AudioFile audio in pL.Playlist)
-                        playListLB.Items.Add(audio.Path);
-
-                    playListLB.SelectedIndex = indexOfSelectedItem;
-                }
-            }
-            else
-            if (e.KeyCode == Keys.Delete)
-            {
-                удалитьToolStripMenuItem_Click(sender, e);
-            }
-            else
-                if (e.KeyCode == Keys.Enter)
-            {
-                if (pL.Playlist.Count >= 2)
-                {
-                    pL.NumberOfCurrentSong = playListLB.SelectedIndex;
-                    pL.Volume = trackVolume.Value;
-                    pL.Play();
-                    timer.Enabled = true;
+                        playListLB.SelectedIndex = indexOfSelectedItem;
+                    }
                 }
                 else
-                    MessageBox.Show("Плей-лист должен содержать минимум две песни!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (e.Shift && e.KeyCode == Keys.Down)
+                {
+                    int indexOfSelectedItem = playListLB.SelectedIndex;
+
+                    if (indexOfSelectedItem != pL.Playlist.Count - 1)
+                    {
+                        AudioFile tmpAudio = pL.Playlist.ElementAt(indexOfSelectedItem);
+                        pL.Playlist[indexOfSelectedItem] = pL.Playlist[indexOfSelectedItem + 1];
+                        pL.Playlist[indexOfSelectedItem + 1] = tmpAudio;
+                        playListLB.Items.Clear();
+
+                        foreach (AudioFile audio in pL.Playlist)
+                            playListLB.Items.Add(audio.Path);
+
+                        playListLB.SelectedIndex = indexOfSelectedItem;
+                    }
+                }
+                else
+            if (e.KeyCode == Keys.Delete)
+                {
+                    удалитьToolStripMenuItem_Click(sender, e);
+                }
+                else
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if (pL.Playlist.Count >= 2)
+                    {
+                        pL.NumberOfCurrentSong = playListLB.SelectedIndex;
+                        pL.Volume = trackVolume.Value;
+                        pL.Play();
+                        timer.Enabled = true;
+                    }
+                    else
+                        MessageBox.Show("Плей-лист должен содержать минимум две песни!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+
             }
         }
 

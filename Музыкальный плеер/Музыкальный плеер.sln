@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Музыкальный плеер", "Музыкальный плеер\Музыкальный плеер.csproj", "{08DE6C80-4132-4764-A563-56507917D63B}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "MusicPlayerClassDiagram", "MusicPlayerClassDiagram\MusicPlayerClassDiagram.modelproj", "{E1448E1A-D176-4174-92C2-43D346F99F0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08DE6C80-4132-4764-A563-56507917D63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08DE6C80-4132-4764-A563-56507917D63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08DE6C80-4132-4764-A563-56507917D63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1448E1A-D176-4174-92C2-43D346F99F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1448E1A-D176-4174-92C2-43D346F99F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1448E1A-D176-4174-92C2-43D346F99F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1448E1A-D176-4174-92C2-43D346F99F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

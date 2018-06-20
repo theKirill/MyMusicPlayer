@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="76c860a0-d71c-45e3-9496-ef8a9641259f"
+  name="Controls"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c1775faa-db8b-4e81-b986-cf17a7b51e76"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetroFramework.Controls"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="aa9a9f3c-4c26-45ac-8c79-673ed2d64bb7"
+        name="MetroLabel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6dec91bf-2cd9-49ac-8069-fbbf90f40f98"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FМузыкальный плеер%2FМузыкальный плеер%2FMetroFramework.dll&quot; Namespace%3DMetroFramework.Controls Type%3DMetroLabel"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="19e7a437-a014-4a29-b2f3-7ce4710bdb06"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d2179747-d689-4046-b51d-6db470e38196">
+                <propertyInstance
+                  Id="28f201ff-249c-46f3-9e89-f5cf34814e41"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2cd3bf0c-f078-40eb-99a8-fd85994ab5e9">
+                <propertyInstance
+                  Id="12eabd37-eeb0-43b4-8e2c-af3bca16ca36"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87844d32-5c13-45bb-b105-055aecbd9a11">
+                <propertyInstance
+                  Id="8bc81a18-059b-4fa2-8c34-acc620a0ab3b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0495fc23-98aa-4379-8e03-73443924e4da">
+                <propertyInstance
+                  Id="0fe5045a-0b1f-4cf7-bd59-efb9f94fcf90"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b49193da-45e3-45bd-8db2-7e7fcad7e519">
+                <propertyInstance
+                  Id="96f8fd83-57e4-44b6-816c-9407d209b00b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4eb7f14f-87f1-44d5-97e4-fa20c83413a3"
+        name="MetroTextBox"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4290dd97-7d31-4618-a5ec-8d1e558c52bd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FМузыкальный плеер%2FМузыкальный плеер%2FMetroFramework.dll&quot; Namespace%3DMetroFramework.Controls Type%3DMetroTextBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="08b26aa8-bdb0-4f34-ace0-8792d7da3241"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ffc72769-804c-4c29-86f2-20df17eb4a78">
+                <propertyInstance
+                  Id="e759f917-4184-44fd-aade-1ec13049cd14"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b99e488-b6db-44dc-a1ca-a29d9dc1f66c">
+                <propertyInstance
+                  Id="39a8bd3f-23c4-4d72-a9ff-f7106ae1b5c8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="82e0dee1-0673-4f4a-8935-65a7e048daf1">
+                <propertyInstance
+                  Id="a8daede9-f239-443b-aa28-ab513e72727d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="53813209-b6b4-4122-9cc8-82bba480398f">
+                <propertyInstance
+                  Id="7485bdfc-8a6d-4248-87be-c8590f12942d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0feb56d6-cb4c-4e49-afdc-2201a318f802">
+                <propertyInstance
+                  Id="b4deb195-392b-4395-9717-bf4c27157f59"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6b472000-87c6-4661-a5ac-67102f225e57"
+        name="MetroLink"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d353d636-91af-47d4-9697-38ba52240ab5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FМузыкальный плеер%2FМузыкальный плеер%2FMetroFramework.dll&quot; Namespace%3DMetroFramework.Controls Type%3DMetroLink"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8fb21974-8894-4ac2-acd8-35e5dee53955"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b9f69079-9b00-4aea-89d6-2501d333970c">
+                <propertyInstance
+                  Id="109e8c23-fba9-486a-89bf-a50b1a2bbd46"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="77088b74-70b3-4448-9bee-e11d0f6a3ae5">
+                <propertyInstance
+                  Id="c2579475-0afd-4e9b-9b02-fed171e7dde5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da1aad21-49e6-4b00-9483-1301cf91fc4e">
+                <propertyInstance
+                  Id="e7027e49-2a0e-43c1-ba86-b82bcf0be6dc"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fe1592c1-6a8f-4937-8dd2-424d7e2bd7dc">
+                <propertyInstance
+                  Id="1416497d-4567-4d1a-8b4c-e15cf2995a68"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f285330-607b-406e-8b03-600096066823">
+                <propertyInstance
+                  Id="4b139355-4b41-44f6-910d-9840f7a40bbf"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f6ea8250-b811-4e59-af7c-d566228df886"
+        name="MetroTrackBar"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="69483827-565d-4015-a67e-79b4acb66b57"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FМузыкальный плеер%2FМузыкальный плеер%2FMetroFramework.dll&quot; Namespace%3DMetroFramework.Controls Type%3DMetroTrackBar"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f13dd852-b64b-4cb5-b191-099325d0b471"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0725a884-a61b-4f8d-a5e8-48b2c42e3801">
+                <propertyInstance
+                  Id="d6746d8b-26d1-4b4f-8070-7ae6f454ba32"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5063c734-59f8-407b-8eab-d8364114c12f">
+                <propertyInstance
+                  Id="36550c51-8a2e-4a9e-b44f-483b950cf233"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ef34ed07-853a-4be9-8e1a-29c1b45c070d">
+                <propertyInstance
+                  Id="fdbf75ad-dfec-4a57-9c25-598a49ed689e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d4bf11d4-1dd0-434b-bfbc-e6f0eab4e3a7">
+                <propertyInstance
+                  Id="6ea3268a-70f1-4982-b2bc-4f508dd0fcd5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dd2e478f-0287-4083-bd04-2d1c0c0ea2f1">
+                <propertyInstance
+                  Id="a04fb941-bd4f-4841-81d3-1838c27e94b1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

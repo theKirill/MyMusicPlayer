@@ -37,13 +37,16 @@
             this.pictureBoxEqu = new System.Windows.Forms.PictureBox();
             this.metroLabelCurrentPos = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEqu)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelURL
             // 
             this.LabelURL.AutoSize = true;
-            this.LabelURL.Location = new System.Drawing.Point(147, 44);
+            this.LabelURL.Location = new System.Drawing.Point(147, 47);
             this.LabelURL.Name = "LabelURL";
             this.LabelURL.Size = new System.Drawing.Size(129, 19);
             this.LabelURL.TabIndex = 1;
@@ -51,7 +54,7 @@
             // 
             // TextFieldURL
             // 
-            this.TextFieldURL.Location = new System.Drawing.Point(309, 44);
+            this.TextFieldURL.Location = new System.Drawing.Point(309, 47);
             this.TextFieldURL.Name = "TextFieldURL";
             this.TextFieldURL.Size = new System.Drawing.Size(172, 23);
             this.TextFieldURL.TabIndex = 3;
@@ -61,7 +64,7 @@
             this.ButtonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonAdd.Location = new System.Drawing.Point(233, 99);
+            this.ButtonAdd.Location = new System.Drawing.Point(233, 102);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(178, 35);
             this.ButtonAdd.TabIndex = 6;
@@ -82,7 +85,7 @@
             // metroTrackBarVolume
             // 
             this.metroTrackBarVolume.BackColor = System.Drawing.Color.Transparent;
-            this.metroTrackBarVolume.Location = new System.Drawing.Point(257, 73);
+            this.metroTrackBarVolume.Location = new System.Drawing.Point(257, 76);
             this.metroTrackBarVolume.Name = "metroTrackBarVolume";
             this.metroTrackBarVolume.Size = new System.Drawing.Size(138, 23);
             this.metroTrackBarVolume.TabIndex = 8;
@@ -91,9 +94,9 @@
             // pictureBoxEqu
             // 
             this.pictureBoxEqu.Image = global::Музыкальный_плеер.Properties.Resources._21945286;
-            this.pictureBoxEqu.Location = new System.Drawing.Point(487, 30);
+            this.pictureBoxEqu.Location = new System.Drawing.Point(487, 47);
             this.pictureBoxEqu.Name = "pictureBoxEqu";
-            this.pictureBoxEqu.Size = new System.Drawing.Size(158, 85);
+            this.pictureBoxEqu.Size = new System.Drawing.Size(158, 71);
             this.pictureBoxEqu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxEqu.TabIndex = 9;
             this.pictureBoxEqu.TabStop = false;
@@ -102,7 +105,7 @@
             // metroLabelCurrentPos
             // 
             this.metroLabelCurrentPos.AutoSize = true;
-            this.metroLabelCurrentPos.Location = new System.Drawing.Point(300, 137);
+            this.metroLabelCurrentPos.Location = new System.Drawing.Point(300, 140);
             this.metroLabelCurrentPos.Name = "metroLabelCurrentPos";
             this.metroLabelCurrentPos.Size = new System.Drawing.Size(40, 19);
             this.metroLabelCurrentPos.TabIndex = 10;
@@ -112,12 +115,46 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(134, 8);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(393, 15);
+            this.metroLabel1.TabIndex = 11;
+            this.metroLabel1.Text = "Внимание! Песню можно прослушать пока только с сайта zaycev.net!";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(156, 27);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(99, 15);
+            this.metroLabel2.TabIndex = 12;
+            this.metroLabel2.Text = "Пример ссылки:";
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.metroLink1.Location = new System.Drawing.Point(261, 23);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(251, 23);
+            this.metroLink1.TabIndex = 13;
+            this.metroLink1.Text = "http://zaycev.net/pages/71718/7171893.shtml";
+            // 
             // ListenSongFromSite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 165);
             this.ControlBox = false;
+            this.Controls.Add(this.metroLink1);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabelCurrentPos);
             this.Controls.Add(this.pictureBoxEqu);
             this.Controls.Add(this.metroTrackBarVolume);
@@ -145,5 +182,8 @@
         private System.Windows.Forms.PictureBox pictureBoxEqu;
         private MetroFramework.Controls.MetroLabel metroLabelCurrentPos;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8fb1452b-bd1e-4443-b2df-1f3aabd55cb2"
+  name="WMPLib"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1d7b9464-e5f5-4945-8dcb-7a8a6d87a66b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DWMPLib"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="69929571-3e3d-4269-9fab-6c203e43f0db"
+        name="WindowsMediaPlayer"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="2e008c7c-e92d-40b9-9c93-9efe26b5e735"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FG:%2F2 курс%2FПрактика (Весна)%2FInterop.WMPLib.dll&quot; Namespace%3DWMPLib Type%3DWindowsMediaPlayer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1a436dc7-93f8-4aef-b178-715c9bb2606c"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2759eabf-6b51-4dd1-b243-759e0ab5cbe4">
+                <propertyInstance
+                  Id="f2af14c7-08da-4dd9-8a5a-9b8df08d5d20"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="15763869-3420-4853-9560-065bc272c7fe">
+                <propertyInstance
+                  Id="dd8a8465-386c-4873-b2de-bbb9bcd787ab"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="76de7b60-fd1a-40da-b802-cf932e23cc41">
+                <propertyInstance
+                  Id="5e111230-f159-4293-a653-24d78615b3fe"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="11901985-05a9-4ffc-8d27-b979b87ba4af">
+                <propertyInstance
+                  Id="63aa586f-c1d7-47de-841b-05469c1b21e1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

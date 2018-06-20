@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="00f82bbc-59a3-4505-905b-40a1729cfbdb"
+  name="VB6"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="085435ef-3f1c-4b0a-8735-f41b427c097c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMicrosoft.VisualBasic.Compatibility.VB6"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4c36d1b0-77fd-4736-b101-39472a7b8a03"
+        name="DirListBox"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d24318b3-4de6-4cea-829c-8036dc329296"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2FMicrosoft.VisualBasic.Compatibility.dll&quot; Namespace%3DMicrosoft.VisualBasic.Compatibility.VB6 Type%3DDirListBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="927f67f6-bc89-4558-a1d6-8f389e1156ea"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cda59f0e-5d2d-4acb-8b41-ae27a3b31ade">
+                <propertyInstance
+                  Id="1c2c4b46-94a5-4c07-ac0d-2b80204d3a21"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f07d95df-1c3f-4882-b319-09342f0eac7b">
+                <propertyInstance
+                  Id="065d3c7c-3c53-45b0-bf64-104c9139ab3d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a71d3476-89a9-4e8c-bffb-cb54a7dce906">
+                <propertyInstance
+                  Id="7115698f-6d48-4e24-b5f3-bd3268041f6f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="77d184ba-3c03-4485-96d5-b40499bcbce4">
+                <propertyInstance
+                  Id="57ef6652-76d4-47ac-9052-12ffc7de0911"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a86ea920-8737-4b52-9fcb-a11069dd0509">
+                <propertyInstance
+                  Id="da621e7b-1755-483a-920a-b9306c761084"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="31c4e3a7-875f-43e8-8d8b-1e930dcb228d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="de21b737-d25e-4778-a1a3-27de8091fdd7"
+              LastKnownName="ListBox"
+              LastKnownLocation="Package5_0038.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="69853c64-340a-4673-95e3-aaf293f71d6a"
+        name="DriveListBox"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="88aa3b65-0c97-4cc3-b2bc-bcf16693a050"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2FMicrosoft.VisualBasic.Compatibility.dll&quot; Namespace%3DMicrosoft.VisualBasic.Compatibility.VB6 Type%3DDriveListBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="45bb26eb-bfc2-4a40-8f37-bd05ce84d725"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8033b470-703f-44c4-839f-abf432020d2c">
+                <propertyInstance
+                  Id="61bc411b-c298-49c9-9cfb-549d660c337a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ed2cbaa2-85b0-4c20-b494-633620b5cb8c">
+                <propertyInstance
+                  Id="60b83c3f-3b8d-4b4e-9f15-b5bd1c641480"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c9a1003a-5e30-431c-aaff-c278c0219904">
+                <propertyInstance
+                  Id="39b78735-d67a-4c83-8eb9-d8ae16dfa0ab"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="97d91b0c-6faf-4320-83f2-80c7cc128840">
+                <propertyInstance
+                  Id="e98bacaa-fa56-4fdb-b8fe-64539c65888c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="614317d3-ca10-42f4-821f-1561ccc654ce">
+                <propertyInstance
+                  Id="6c0862c9-1c80-48e5-afe5-214394d5e514"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="21075ed4-1ba9-4359-a5f3-f32dc73c355d"
+        name="FileListBox"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="06c71bec-0539-43e5-bf35-db391135c1c2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2FMicrosoft.VisualBasic.Compatibility.dll&quot; Namespace%3DMicrosoft.VisualBasic.Compatibility.VB6 Type%3DFileListBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3d90c913-1f57-438b-beab-b386712ca218"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e27692b0-d18c-4ec7-91fa-bcb2c09bb5de">
+                <propertyInstance
+                  Id="b3ee645a-feb3-44d9-ac9f-bf31038f0814"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a03867a9-63ee-4254-9a23-234e80a7bbca">
+                <propertyInstance
+                  Id="55170021-3976-4e1c-9673-74dc7de7f7ea"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="823ccb3b-6558-4ed2-8a75-78a478e6e7fa">
+                <propertyInstance
+                  Id="046b2d99-b8da-4086-b4b4-99d2e1bf72c5"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25640df4-c8ab-4b5e-88c2-d0d88ff2489d">
+                <propertyInstance
+                  Id="4b7e2b2c-86e3-46b7-bcdc-8a174d386371"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3ccba6ea-d0c8-41d3-9107-bbebe3357f89">
+                <propertyInstance
+                  Id="630ee12b-4e61-46fc-be70-6eb6e2d52a84"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="87c0e23a-9524-400e-b52e-0fc3435af7cd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="de21b737-d25e-4778-a1a3-27de8091fdd7"
+              LastKnownName="ListBox"
+              LastKnownLocation="Package5_0038.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
