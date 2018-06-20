@@ -91,7 +91,6 @@ namespace Музыкальный_плеер
                             pL.NumberOfCurrentSong = r;
                             playListLB.SelectedIndex = pL.NumberOfCurrentSong;
                         }
-                        else
                         pL.Play();
                         //wmp.URL = playListLB.SelectedItem.ToString();//
                     }
@@ -107,7 +106,6 @@ namespace Музыкальный_плеер
                                 pL.NumberOfCurrentSong += 1;
                                 playListLB.SelectedIndex = pL.NumberOfCurrentSong;
                             }
-                            else
                             pL.Play();
                         }
                     }
@@ -169,23 +167,8 @@ namespace Музыкальный_плеер
 
         private void FileLB_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int y = e.Y / FileLB.GetItemHeight(1);
-                FileLB.SelectedIndex = y;
-
-                pL.AddSong(new AudioFile(FileLB.Path + "\\" + FileLB.SelectedItem));
-            }
-            catch
-            {
-                FileLB.SelectedIndex = 0;
-                pL.AddSong(new AudioFile(FileLB.Path + "\\" + FileLB.SelectedItem));
-            }
-            finally
-            {
-                playListLB.Items.Add(FileLB.Path + "\\" + FileLB.SelectedItem);
-                //wmp.settings.volume = 0;
-            }
+            pL.AddSong(new AudioFile(FileLB.Path + "\\" + FileLB.SelectedItem));
+            playListLB.Items.Add(FileLB.Path + "\\" + FileLB.SelectedItem);
         }
 
         private void FileLB_MouseDown(object sender, MouseEventArgs e)
@@ -717,23 +700,9 @@ namespace Музыкальный_плеер
 
         private void FileLB2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int y = e.Y / FileLB2.GetItemHeight(1);
-                FileLB2.SelectedIndex = y;
-                pL.AddSong(new AudioFile(filesForSearch[FileLB2.SelectedIndex]));
-            }
-            catch
-            {
-                FileLB2.SelectedIndex = 0;
-                List<string> kek = filesForSearch;
-                pL.AddSong(new AudioFile(filesForSearch[FileLB2.SelectedIndex]));
-            }
-            finally
-            {
-                RefreshLBPL();
-                wmp.settings.volume = 0;
-            }
+            pL.AddSong(new AudioFile(filesForSearch[FileLB2.SelectedIndex]));
+            RefreshLBPL();
+            wmp.settings.volume = 0;
         }
 
         private void buttonClearPL_Click(object sender, EventArgs e)
