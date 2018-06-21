@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using AngleSharp.Dom.Html;
-using System.Collections.Generic;
 namespace Музыкальный_плеер
 {
     class Parser : IParser
@@ -21,9 +20,9 @@ namespace Музыкальный_плеер
 
         string IParser.Parse(IHtmlDocument document)
         {
-            var items = document.QuerySelectorAll("a").Where(item => item.ClassName != null && item.ClassName.Contains("button-download__link"));//получение из html-документа тегов "a" и ссылки на аудиофайл
+            var items = document.QuerySelectorAll("a").Where(item => item.ClassName != null && item.ClassName.Contains("button-download__link"));//получение из html-документа элементов с тегом "a" 
 
-            return items.ToArray()[0].OuterHtml;
+            return items.ToArray()[0].OuterHtml;//возврат HTML-кода полученного элемента
         }
     }
 }

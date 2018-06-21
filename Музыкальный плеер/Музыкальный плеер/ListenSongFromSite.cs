@@ -8,13 +8,12 @@ namespace Музыкальный_плеер
     public partial class ListenSongFromSite : MetroForm
     {
         public string URL;
-        public bool input;
         public string result;
         bool close = false;
 
         Parser p;
         ParserWorker parser;
-WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
+        WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
 
         public ListenSongFromSite()
         {
@@ -25,7 +24,6 @@ WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
-            input = false;
             wmpFromSite.controls.stop();
             close = true;
             this.Close();
@@ -36,9 +34,8 @@ WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
             if (TextFieldURL.Text != "")
             {
                 URL = TextFieldURL.Text;
-                input = true;
                 p.BaseURL = URL;
-                parser.Start(this);
+                parser.Start(this);//запуск парсера
             }
             else
             {
@@ -53,8 +50,8 @@ WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
             else
             {
                 result = parser.Result;
-                wmpFromSite.URL = this.result;
-                wmpFromSite.controls.play();
+                wmpFromSite.URL = this.result;//присваивание URL найденного трека с сайта
+                wmpFromSite.controls.play();//проигрывание песни с сайта
                 timer1.Enabled = true;
                 pictureBoxEqu.Visible = true;
                 e.Cancel = true;
@@ -63,12 +60,12 @@ WindowsMediaPlayer wmpFromSite = new WindowsMediaPlayer();
 
         private void metroTrackBarVolume_Scroll(object sender, ScrollEventArgs e)
         {
-            wmpFromSite.settings.volume = metroTrackBarVolume.Value;
+            wmpFromSite.settings.volume = metroTrackBarVolume.Value;//изменение громкости
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            metroLabelCurrentPos.Text = wmpFromSite.controls.currentPositionString;
+            metroLabelCurrentPos.Text = wmpFromSite.controls.currentPositionString;//обновление текущей позиции играющего трека
             if (metroLabelCurrentPos.Text == "")
                 pictureBoxEqu.Visible = false;
             else

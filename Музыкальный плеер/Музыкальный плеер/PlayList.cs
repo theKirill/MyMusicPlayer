@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WMPLib;
 using System.Windows.Forms;
 
@@ -10,11 +7,15 @@ namespace Музыкальный_плеер
 {
     class PlayList
     {
-        int numberOfCurrentSong = -1;
+        int numberOfCurrentSong = -1;//номер текущего играющего трека, -1 - не играет ничего
         List<AudioFile> playlist = new List<AudioFile>();
         WindowsMediaPlayer wmp = new WindowsMediaPlayer();
         bool pause = false;
-        
+
+        /// <summary>
+        /// Свойство, возращающее все треки в плей-листе
+        /// </summary>
+        /// 
         public List<AudioFile> Playlist
         {
             get
@@ -23,6 +24,9 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// Свойство, возвращающее и устанавливающее текущую позицию играющего трека
+        /// </summary>
         public double CurrentPosition
         {
             get
@@ -36,6 +40,9 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// Свойство, возвращающее и устанавливающее текущую позицию играющего трека в виде строки
+        /// </summary>
         public string CurrentPositionStr
         {
             get
@@ -44,6 +51,20 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// войство, возвращающее длину играющего трека
+        /// </summary>
+        public double LengthOfCurrentSong
+        {
+            get
+            {
+                return wmp.currentMedia.duration;
+            }
+        }
+
+        /// <summary>
+        /// Свойство, возвращающее длину играющего трека в виде строки
+        /// </summary>
         public string LengthOfCurrentSongStr
         {
             get
@@ -52,6 +73,9 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// Свойство, возвращающее и устанавливающее номер текущего играющего трека
+        /// </summary>
         public int NumberOfCurrentSong
         {
             get
@@ -65,6 +89,9 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// Свойство, возвращающее и устанавливающее громкость
+        /// </summary>
         public int Volume
         {
             get
@@ -78,14 +105,10 @@ namespace Музыкальный_плеер
             }
         }
 
-        public double LengthOfCurrentSong
-        {
-            get
-            {
-                return wmp.currentMedia.duration;
-            }
-        }
-
+        /// <summary>
+        /// Метод добавления песни в плей-лист
+        /// </summary>
+        /// <param name="f">Аудиофайл для добавления</param>
         public void AddSong(AudioFile f)
         {
             WindowsMediaPlayer current = new WindowsMediaPlayer();
@@ -93,6 +116,7 @@ namespace Музыкальный_плеер
             f.Length = current.currentMedia.duration;
             playlist.Add(f);
             current.controls.stop();
+
             if (numberOfCurrentSong == -1)
             {
                 wmp = current;
@@ -101,12 +125,20 @@ namespace Музыкальный_плеер
             }
         }
 
+        /// <summary>
+        /// Удаление песни из плей-листа
+        /// </summary>
+        /// <param name="ind">Номер удаляемого трека</param>
         public void DeleteSong(int ind)
         {
             playlist.RemoveAt(ind);
         }
 
-        public bool Play()//
+        /// <summary>
+        /// Метод для проигрывания плей-листа
+        /// </summary>
+        /// <returns>Возвращает true, если можно начать проигрывать плей-лист</returns>
+        public bool Play()
         {
             if (playlist.Count < 2)
             {
@@ -130,11 +162,17 @@ namespace Музыкальный_плеер
             return true;
         }
 
+        /// <summary>
+        /// Стоп плей-листа
+        /// </summary>
         public void Stop()
         {
             wmp.controls.stop();
         }
 
+        /// <summary>
+        /// Постановка на паузу
+        /// </summary>
         public void Pause()
         {
             wmp.controls.pause();

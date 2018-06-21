@@ -1,6 +1,6 @@
 ﻿namespace Музыкальный_плеер
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.playListLB = new System.Windows.Forms.ListBox();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,7 +132,7 @@
             this.trackLength.TabIndex = 5;
             this.trackLength.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackLength.Scroll += new System.EventHandler(this.trackLength_Scroll);
-            this.trackLength.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            //this.trackLength.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // timer
             // 
@@ -216,7 +216,7 @@
             this.textBoxSearch.TabIndex = 12;
             this.textBoxSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
-            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            //this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // saveFileDialog
             // 
@@ -237,7 +237,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+//            this.menuStrip1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // плейлистToolStripMenuItem
             // 
@@ -289,7 +289,6 @@
             this.повторятьТрекToolStripMenuItem.Name = "повторятьТрекToolStripMenuItem";
             this.повторятьТрекToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.повторятьТрекToolStripMenuItem.Text = "Повторять трек";
-            this.повторятьТрекToolStripMenuItem.CheckedChanged += new System.EventHandler(this.повторятьТрекToolStripMenuItem_CheckedChanged);
             this.повторятьТрекToolStripMenuItem.Click += new System.EventHandler(this.buttonRepeatSong_Click);
             // 
             // повторятьПлейлистToolStripMenuItem
@@ -532,7 +531,7 @@
             this.DriveLB.TabIndex = 21;
             this.DriveLB.SelectedIndexChanged += new System.EventHandler(this.DriveLB_SelectedIndexChanged);
             this.DriveLB.Click += new System.EventHandler(this.DriveLB_Click);
-            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+//            this.DriveLB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             // 
             // DirLB
             // 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Музыкальный_плеер
+﻿namespace Музыкальный_плеер
 {
     class AudioFile
     {
@@ -40,7 +34,7 @@ namespace Музыкальный_плеер
             set
             {
                 int ind = value.LastIndexOf('\\');
-                name = value.Substring(ind+1);
+                name = value.Substring(ind + 1);
             }
         }
 
@@ -49,11 +43,11 @@ namespace Музыкальный_плеер
             get
             {
                 return path;
-            }   
+            }
             set
             {
                 path = value;
-            }         
+            }
         }
 
         public override bool Equals(object obj)
