@@ -301,8 +301,9 @@ namespace Музыкальный_плеер
 
                     for (int i = 0; i < count; i++)
                     {
-                        pL.AddSong(new AudioFile(sr.ReadLine()));
-                        playListLB.Items.Add(sr.ReadLine());
+                        string path = sr.ReadLine();
+                        pL.AddSong(new AudioFile(path));
+                        playListLB.Items.Add(path);
                     }
 
                     sr.Close();
@@ -814,7 +815,13 @@ namespace Музыкальный_плеер
             }
         }
 
-        private void PreprocessCase2(int[] shift, int[] bpos, int m)
+        /// <summary>
+        /// Установка значений массива сдвигов
+        /// </summary>
+        /// <param name="shift"></param>
+        /// <param name="bpos"></param>
+        /// <param name="m"></param>
+        private void SetShift(int[] shift, int[] bpos, int m)
         {
             int i, j;
             j = bpos[0];
@@ -824,30 +831,31 @@ namespace Музыкальный_плеер
                 if (shift[i] == 0)
                     shift[i] = j;
 
-                if (i == j)
-                    j = bpos[j];
+                //if (i == j)
+                //    j = bpos[j];
             }
         }
 
         /// <summary>
-        /// Поиск по подстроке по алгоритму Бойера-Мура по правилу сдвига хорошего суффикса
+        /// Поиск по подстроке по алгоритму Бойера-Мура
         /// </summary>
         /// <param name="text">Строка, в которой осуществляется поиск</param>
         /// <param name="sub">Подстрока, которую необходимо найти</param>
         /// <returns></returns>
         private int SearchSubstring(string text, string sub)
         {
-            int s = 0, j;
+            int s = 0, j;//s - сдвиг подстроки (начало входа подстроки в строку)
             int m = sub.Length;
             int n = text.Length;
 
             int[] bpos = new int[m + 1];
             int[] shift = new int[m + 1];
 
-            for (int i = 0; i < m + 1; i++) shift[i] = 0;
+            for (int i = 0; i < m + 1; i++)
+                shift[i] = 0;
 
             PreprocessStrongSuffix(shift, bpos, sub, m);
-            PreprocessCase2(shift, bpos, m);
+            SetShift(shift, bpos, m);
 
             while (s <= n - m)
             {
@@ -858,7 +866,7 @@ namespace Музыкальный_плеер
                     j--;
 
                 //если подстрока присутствует при текущем сдвиге
-                if (j < 0)
+                if (j < 0)//j станет -1 при нахождении подстроки
                 {
                     return s;//результат - индекс в исходной строке, с которого начинается подстрока
                 }

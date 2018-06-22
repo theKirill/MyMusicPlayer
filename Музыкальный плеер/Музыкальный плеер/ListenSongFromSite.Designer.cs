@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.LabelURL = new MetroFramework.Controls.MetroLabel();
             this.TextFieldURL = new MetroFramework.Controls.MetroTextBox();
-            this.ButtonAdd = new System.Windows.Forms.Button();
+            this.ButtonListen = new System.Windows.Forms.Button();
             this.LabelClose = new MetroFramework.Controls.MetroLabel();
             this.metroTrackBarVolume = new MetroFramework.Controls.MetroTrackBar();
             this.pictureBoxEqu = new System.Windows.Forms.PictureBox();
@@ -59,18 +59,18 @@
             this.TextFieldURL.Size = new System.Drawing.Size(172, 23);
             this.TextFieldURL.TabIndex = 3;
             // 
-            // ButtonAdd
+            // ButtonListen
             // 
-            this.ButtonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonAdd.Location = new System.Drawing.Point(233, 102);
-            this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(178, 35);
-            this.ButtonAdd.TabIndex = 6;
-            this.ButtonAdd.Text = "Прослушать песню";
-            this.ButtonAdd.UseVisualStyleBackColor = true;
-            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            this.ButtonListen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonListen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonListen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonListen.Location = new System.Drawing.Point(233, 102);
+            this.ButtonListen.Name = "ButtonListen";
+            this.ButtonListen.Size = new System.Drawing.Size(178, 35);
+            this.ButtonListen.TabIndex = 6;
+            this.ButtonListen.Text = "Прослушать песню";
+            this.ButtonListen.UseVisualStyleBackColor = true;
+            this.ButtonListen.Click += new System.EventHandler(this.ButtonListen_Click);
             // 
             // LabelClose
             // 
@@ -94,7 +94,7 @@
             // pictureBoxEqu
             // 
             this.pictureBoxEqu.Image = global::Музыкальный_плеер.Properties.Resources._21945286;
-            this.pictureBoxEqu.Location = new System.Drawing.Point(487, 47);
+            this.pictureBoxEqu.Location = new System.Drawing.Point(486, 47);
             this.pictureBoxEqu.Name = "pictureBoxEqu";
             this.pictureBoxEqu.Size = new System.Drawing.Size(158, 71);
             this.pictureBoxEqu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,14 +159,14 @@
             this.Controls.Add(this.pictureBoxEqu);
             this.Controls.Add(this.metroTrackBarVolume);
             this.Controls.Add(this.LabelClose);
-            this.Controls.Add(this.ButtonAdd);
+            this.Controls.Add(this.ButtonListen);
             this.Controls.Add(this.TextFieldURL);
             this.Controls.Add(this.LabelURL);
             this.MaximumSize = new System.Drawing.Size(645, 165);
             this.MinimumSize = new System.Drawing.Size(645, 165);
             this.Name = "ListenSongFromSite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddSongFromSite_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListenSongFromSite_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEqu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,7 +176,7 @@
         #endregion
         private MetroFramework.Controls.MetroLabel LabelURL;
         private MetroFramework.Controls.MetroTextBox TextFieldURL;
-        private System.Windows.Forms.Button ButtonAdd;
+        private System.Windows.Forms.Button ButtonListen;
         private MetroFramework.Controls.MetroLabel LabelClose;
         private MetroFramework.Controls.MetroTrackBar metroTrackBarVolume;
         private System.Windows.Forms.PictureBox pictureBoxEqu;

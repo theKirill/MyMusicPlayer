@@ -29,21 +29,21 @@ namespace Музыкальный_плеер
             this.Close();
         }
 
-        private void ButtonAdd_Click(object sender, EventArgs e)
+        private void metroTrackBarVolume_Scroll(object sender, ScrollEventArgs e)
         {
-            if (TextFieldURL.Text != "")
-            {
-                URL = TextFieldURL.Text;
-                p.BaseURL = URL;
-                parser.Start(this);//запуск парсера
-            }
-            else
-            {
-                MessageBox.Show("Введён пустой URL-адрес");
-            }
+            wmpFromSite.settings.volume = metroTrackBarVolume.Value;//изменение громкости
         }
 
-        private void AddSongFromSite_FormClosing(object sender, FormClosingEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            metroLabelCurrentPos.Text = wmpFromSite.controls.currentPositionString;//обновление текущей позиции играющего трека
+            if (metroLabelCurrentPos.Text == "")
+                pictureBoxEqu.Visible = false;
+            else
+                pictureBoxEqu.Visible = true;
+        }
+
+        private void ListenSongFromSite_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (close)
                 e.Cancel = false;
@@ -58,18 +58,18 @@ namespace Музыкальный_плеер
             }
         }
 
-        private void metroTrackBarVolume_Scroll(object sender, ScrollEventArgs e)
+        private void ButtonListen_Click(object sender, EventArgs e)
         {
-            wmpFromSite.settings.volume = metroTrackBarVolume.Value;//изменение громкости
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            metroLabelCurrentPos.Text = wmpFromSite.controls.currentPositionString;//обновление текущей позиции играющего трека
-            if (metroLabelCurrentPos.Text == "")
-                pictureBoxEqu.Visible = false;
+            if (TextFieldURL.Text != "")
+            {
+                URL = TextFieldURL.Text;
+                p.BaseURL = URL;
+                parser.Start(this);//запуск парсера
+            }
             else
-                pictureBoxEqu.Visible = true;
+            {
+                MessageBox.Show("Введён пустой URL-адрес");
+            }
         }
     }
-}
+}      
